@@ -1,0 +1,449 @@
+[gd_scene load_steps=6 format=3 uid="uid://cr31c8krw2ybh"]
+
+[ext_resource type="Script" path="res://menu/menu.gd" id="1_eeo1j"]
+[ext_resource type="FontFile" uid="uid://bxv7ewrcpy8ab" path="res://assets/Kenney Bold.ttf" id="1_xjir8"]
+[ext_resource type="Texture2D" uid="uid://f4lu3sfns4rq" path="res://assets/HUD/Fondomenu.jpeg" id="2_4l0vv"]
+[ext_resource type="AudioStream" uid="uid://csrul1n4xm1y5" path="res://assets/AudiosLevels/MenuPrueba.mp3" id="6_vsrb7"]
+[ext_resource type="Script" path="res://menu/ControlAjustes.gd" id="7_qatuo"]
+
+[node name="Menu" type="Control"]
+process_priority = 10
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_eeo1j")
+
+[node name="Fondomenu" type="Sprite2D" parent="."]
+modulate = Color(0.388107, 0.577009, 1, 1)
+position = Vector2(240, 360.25)
+scale = Vector2(0.46875, 0.401507)
+texture = ExtResource("2_4l0vv")
+
+[node name="LabelTitulo" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -239.0
+offset_top = 27.0
+offset_right = 241.0
+offset_bottom = 132.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_xjir8")
+theme_override_font_sizes/font_size = 33
+text = "Mongoose
+Feast"
+horizontal_alignment = 1
+
+[node name="LabelVersion" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -437.0
+offset_top = 698.0
+offset_right = 43.0
+offset_bottom = 803.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_xjir8")
+theme_override_font_sizes/font_size = 10
+text = "Alpha 0.1"
+horizontal_alignment = 1
+
+[node name="LabelLastScore" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -232.0
+offset_top = 506.0
+offset_right = 14.0
+offset_bottom = 611.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_xjir8")
+theme_override_font_sizes/font_size = 12
+text = "-"
+horizontal_alignment = 1
+
+[node name="LabelMaxScore" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -232.0
+offset_top = 600.0
+offset_right = 15.0
+offset_bottom = 705.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.843137, 0, 1)
+theme_override_fonts/font = ExtResource("1_xjir8")
+theme_override_font_sizes/font_size = 12
+text = "-"
+horizontal_alignment = 1
+
+[node name="LabelLastLevel" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 2.0
+offset_top = 506.0
+offset_right = 248.0
+offset_bottom = 611.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_xjir8")
+theme_override_font_sizes/font_size = 12
+text = "-"
+horizontal_alignment = 1
+
+[node name="LabelMaxLevel" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 1.0
+offset_top = 600.0
+offset_right = 248.0
+offset_bottom = 705.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.843137, 0, 1)
+theme_override_fonts/font = ExtResource("1_xjir8")
+theme_override_font_sizes/font_size = 12
+text = "-"
+horizontal_alignment = 1
+
+[node name="StartButton" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -79.0
+offset_top = -193.0
+offset_right = 78.0
+offset_bottom = -128.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.4, 0.733333, 0.415686, 1)
+theme_override_fonts/font = ExtResource("1_xjir8")
+theme_override_font_sizes/font_size = 20
+text = "Jugar"
+flat = true
+
+[node name="LevelSelectorButton" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -91.0
+offset_top = -42.0
+offset_right = 92.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.843137, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0.843137, 0, 1)
+theme_override_fonts/font = ExtResource("1_xjir8")
+theme_override_font_sizes/font_size = 17
+text = "Selector de
+Niveles"
+flat = true
+
+[node name="ConfigButton" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -92.0
+offset_top = -121.0
+offset_right = 91.0
+offset_bottom = -56.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.843137, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0.843137, 0, 1)
+theme_override_fonts/font = ExtResource("1_xjir8")
+theme_override_font_sizes/font_size = 20
+text = "Ajustes"
+flat = true
+
+[node name="LeaderBoardButton" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -211.0
+offset_top = 29.0
+offset_right = 210.0
+offset_bottom = 94.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.843137, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0.843137, 0, 1)
+theme_override_fonts/font = ExtResource("1_xjir8")
+theme_override_font_sizes/font_size = 20
+disabled = true
+text = "Tabla de posiciones"
+flat = true
+
+[node name="LabelSoon" type="Label" parent="LeaderBoardButton"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -67.0
+offset_top = 51.0
+offset_right = 63.0
+offset_bottom = 67.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_xjir8")
+theme_override_font_sizes/font_size = 8
+text = "\"Proximamente\""
+horizontal_alignment = 1
+
+[node name="QuitButton" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = 303.0
+offset_right = 65.0
+offset_bottom = 368.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.776471, 0.156863, 0.156863, 1)
+theme_override_fonts/font = ExtResource("1_xjir8")
+theme_override_font_sizes/font_size = 20
+text = "Salir"
+flat = true
+
+[node name="BackgroundBlocker" type="ColorRect" parent="."]
+visible = false
+self_modulate = Color(1, 1, 1, 0.00392157)
+layout_mode = 0
+offset_right = 486.0
+offset_bottom = 722.0
+color = Color(0, 0, 0, 1)
+
+[node name="MenuPrueba" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(0, -16)
+stream = ExtResource("6_vsrb7")
+volume_db = -10.0
+attenuation = 2.92817e-05
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ControlAjustes" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 512.0
+offset_top = 158.0
+offset_right = 978.0
+offset_bottom = 573.0
+script = ExtResource("7_qatuo")
+
+[node name="BackgroundBlur" type="ColorRect" parent="CanvasLayer/ControlAjustes"]
+layout_mode = 0
+offset_left = -522.0
+offset_top = -162.0
+offset_right = -4.0
+offset_bottom = 612.0
+color = Color(0, 0, 0, 0.00392157)
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/ControlAjustes"]
+layout_mode = 0
+offset_left = -504.0
+offset_top = 1.0
+offset_right = -39.0
+offset_bottom = 415.0
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="LabelTitulo2" type="Label" parent="CanvasLayer/ControlAjustes"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -736.0
+offset_top = 42.0
+offset_right = -256.0
+offset_bottom = 130.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_xjir8")
+theme_override_font_sizes/font_size = 33
+text = "Ajustes"
+horizontal_alignment = 1
+
+[node name="BackButton2" type="Button" parent="CanvasLayer/ControlAjustes"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -568.0
+offset_top = 161.5
+offset_right = -440.0
+offset_bottom = 207.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.776471, 0.156863, 0.156863, 1)
+theme_override_fonts/font = ExtResource("1_xjir8")
+theme_override_font_sizes/font_size = 20
+text = "Volver"
+flat = true
+
+[node name="VolumenLabel2" type="Label" parent="CanvasLayer/ControlAjustes"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -728.0
+offset_top = 136.0
+offset_right = -588.0
+offset_bottom = 166.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_xjir8")
+theme_override_font_sizes/font_size = 20
+text = "Volumen"
+horizontal_alignment = 1
+
+[node name="LenguajeLabel" type="Label" parent="CanvasLayer/ControlAjustes"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -728.5
+offset_top = 189.0
+offset_right = -568.5
+offset_bottom = 220.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_xjir8")
+theme_override_font_sizes/font_size = 20
+text = "Lenguaje"
+horizontal_alignment = 1
+
+[node name="ChangeLenguajeButton" type="OptionButton" parent="CanvasLayer/ControlAjustes"]
+layout_mode = 0
+offset_left = -176.0
+offset_top = 189.0
+offset_right = -54.0
+offset_bottom = 218.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 13
+item_count = 3
+selected = 2
+popup/item_0/text = "Seleccionar"
+popup/item_0/id = 0
+popup/item_0/disabled = true
+popup/item_0/separator = true
+popup/item_1/text = "        Ingles"
+popup/item_1/id = 1
+popup/item_2/text = "        Español"
+popup/item_2/id = 2
+
+[node name="CreditosButton2" type="Button" parent="CanvasLayer/ControlAjustes"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -732.0
+offset_top = 279.0
+offset_right = -574.0
+offset_bottom = 325.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 0.843137, 0, 1)
+theme_override_fonts/font = ExtResource("1_xjir8")
+theme_override_font_sizes/font_size = 20
+text = "Creditos"
+flat = true
+
+[node name="NumVolumenLabel2" type="Label" parent="CanvasLayer/ControlAjustes"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -327.5
+offset_top = 138.0
+offset_right = -273.5
+offset_bottom = 161.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_xjir8")
+theme_override_font_sizes/font_size = 15
+text = "100%"
+horizontal_alignment = 1
+
+[node name="VolumenBarra2" type="HSlider" parent="CanvasLayer/ControlAjustes"]
+layout_mode = 0
+offset_left = -354.0
+offset_top = 139.0
+offset_right = -99.0
+offset_bottom = 162.0
+step = 5.0
+value = 100.0
+
+[node name="FullScreenButton" type="CheckButton" parent="CanvasLayer/ControlAjustes"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -735.0
+offset_top = 233.0
+offset_right = -273.0
+offset_bottom = 271.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_xjir8")
+theme_override_font_sizes/font_size = 20
+text = "Pantalla Completa"
+flat = true
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="LevelSelectorButton" to="." method="_on_level_selector_button_pressed"]
+[connection signal="pressed" from="ConfigButton" to="." method="_on_config_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="finished" from="MenuPrueba" to="." method="_on_menu_prueba_finished"]
+[connection signal="pressed" from="CanvasLayer/ControlAjustes/BackButton2" to="CanvasLayer/ControlAjustes" method="_on_back_button_2_pressed"]
+[connection signal="item_selected" from="CanvasLayer/ControlAjustes/ChangeLenguajeButton" to="CanvasLayer/ControlAjustes" method="_on_change_lenguaje_button_item_selected"]
+[connection signal="pressed" from="CanvasLayer/ControlAjustes/CreditosButton2" to="CanvasLayer/ControlAjustes" method="_on_creditos_button_2_pressed"]
+[connection signal="value_changed" from="CanvasLayer/ControlAjustes/VolumenBarra2" to="CanvasLayer/ControlAjustes" method="_on_volumen_barra_2_value_changed"]
+[connection signal="toggled" from="CanvasLayer/ControlAjustes/FullScreenButton" to="CanvasLayer/ControlAjustes" method="_on_full_screen_button_toggled"]

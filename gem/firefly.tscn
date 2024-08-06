@@ -1,0 +1,85 @@
+[gd_scene load_steps=14 format=3 uid="uid://b4xg2pybnrhcf"]
+
+[ext_resource type="Script" path="res://gem/firefly.gd" id="1_xjecs"]
+[ext_resource type="Texture2D" uid="uid://o1n4p7dwui0j" path="res://assets/gem/gem-01.png" id="2_u5fpm"]
+[ext_resource type="Texture2D" uid="uid://cifu64p73bgps" path="res://assets/gem/gem-02.png" id="3_i6c7t"]
+[ext_resource type="Texture2D" uid="uid://yeovoan5vais" path="res://assets/gem/gem-03.png" id="4_ek4dm"]
+[ext_resource type="Texture2D" uid="uid://c5j47wpy66dp1" path="res://assets/gem/gem-04.png" id="5_11rom"]
+[ext_resource type="Texture2D" uid="uid://d4luj3c4kh10t" path="res://assets/gem/gem-05.png" id="6_dridm"]
+[ext_resource type="Texture2D" uid="uid://bigj1eld00hej" path="res://assets/cherry/cherry-01.png" id="7_7vifj"]
+[ext_resource type="Texture2D" uid="uid://dl3q87tj1c3td" path="res://assets/cherry/cherry-02.png" id="8_6qtp4"]
+[ext_resource type="Texture2D" uid="uid://ipj6ddgcoyjn" path="res://assets/cherry/cherry-03.png" id="9_8ejm3"]
+[ext_resource type="Texture2D" uid="uid://x3wdc7f42h10" path="res://assets/cherry/cherry-04.png" id="10_rnf60"]
+[ext_resource type="Texture2D" uid="uid://cwy4kb7o775l" path="res://assets/cherry/cherry-05.png" id="11_jffu8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u5vps"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_u5fpm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_i6c7t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ek4dm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_11rom")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_dridm")
+}],
+"loop": true,
+"name": &"Brillitos gema",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_7vifj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6qtp4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_8ejm3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_rnf60")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_jffu8")
+}],
+"loop": true,
+"name": &"Firefly",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vi3h6"]
+radius = 46.0109
+
+[node name="Firefly" type="Area2D" groups=["firefly"]]
+script = ExtResource("1_xjecs")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+process_mode = 3
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(75, 45)
+scale = Vector2(3.5, 3.5)
+sprite_frames = SubResource("SpriteFrames_u5vps")
+animation = &"Firefly"
+autoplay = "Firefly"
+frame_progress = 0.102201
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(78, 46)
+shape = SubResource("CircleShape2D_vi3h6")
+
+[node name="LifeTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="LifeTimer" to="." method="_on_life_timer_timeout"]

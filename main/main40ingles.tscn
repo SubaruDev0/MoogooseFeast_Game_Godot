@@ -1,0 +1,262 @@
+[gd_scene load_steps=12 format=3 uid="uid://caaspendwl20h"]
+
+[ext_resource type="Script" path="res://main/main40ingles.gd" id="1_7vmhi"]
+[ext_resource type="PackedScene" uid="uid://cbbr6dhnp53u1" path="res://player/player.tscn" id="2_h7cq7"]
+[ext_resource type="Script" path="res://main/HUD.gd" id="3_su6l7"]
+[ext_resource type="FontFile" uid="uid://bxv7ewrcpy8ab" path="res://assets/Kenney Bold.ttf" id="4_u6b0k"]
+[ext_resource type="AudioStream" uid="uid://baw06ntj1ixno" path="res://assets/audio/Level.wav" id="5_spvlt"]
+[ext_resource type="AudioStream" uid="uid://co8lpfbhyo0vx" path="res://assets/audio/Deprisa.wav" id="6_uj0bk"]
+[ext_resource type="PackedScene" uid="uid://bsb4dc6r64kb1" path="res://enemy/froggy.tscn" id="7_jiwsq"]
+[ext_resource type="Texture2D" uid="uid://df665857kmetv" path="res://misc/touch_button.png" id="8_ocqmi"]
+[ext_resource type="AudioStream" uid="uid://c3q5tev305uae" path="res://assets/AudiosLevels/Nivel-alto.ogg" id="9_wse7x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_svxkk"]
+size = Vector2(73, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yjbrq"]
+size = Vector2(3, 719)
+
+[node name="Main40Ingles" type="Node2D"]
+script = ExtResource("1_7vmhi")
+
+[node name="Player" parent="." instance=ExtResource("2_h7cq7")]
+position = Vector2(105, 44)
+speed = 500
+
+[node name="GemContainer" type="Node2D" parent="."]
+
+[node name="HUD" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 480.0
+offset_bottom = 159.0
+script = ExtResource("3_su6l7")
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 8.0
+offset_bottom = 80.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="LabelScore" type="Label" parent="HUD/MarginContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_u6b0k")
+theme_override_font_sizes/font_size = 38
+text = "0"
+
+[node name="LabelTimer" type="Label" parent="HUD/MarginContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_u6b0k")
+theme_override_font_sizes/font_size = 38
+text = "0"
+horizontal_alignment = 2
+
+[node name="LabelLevel" type="Label" parent="HUD/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("4_u6b0k")
+theme_override_font_sizes/font_size = 30
+text = "Level"
+horizontal_alignment = 2
+
+[node name="LabelLevelNumber" type="Label" parent="HUD"]
+layout_mode = 2
+offset_top = 62.0
+offset_right = 479.0
+offset_bottom = 157.0
+grow_horizontal = 2
+pivot_offset = Vector2(16, 87)
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("4_u6b0k")
+theme_override_font_sizes/font_size = 30
+text = "40"
+horizontal_alignment = 1
+
+[node name="GameOver" type="Label" parent="HUD"]
+visible = false
+layout_mode = 2
+offset_left = -1.0
+offset_right = 481.0
+offset_bottom = 721.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("4_u6b0k")
+theme_override_font_sizes/font_size = 30
+text = "Game Over!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelTiempo" type="Label" parent="HUD"]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -46.0
+offset_top = 71.0
+offset_right = 434.0
+offset_bottom = 159.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_u6b0k")
+theme_override_font_sizes/font_size = 15
+text = "+ 5 sec"
+horizontal_alignment = 1
+
+[node name="LabelMas5Score" type="Label" parent="HUD"]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -437.0
+offset_top = 71.0
+offset_right = 43.0
+offset_bottom = 159.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_u6b0k")
+theme_override_font_sizes/font_size = 15
+text = "+ 5 pts"
+horizontal_alignment = 1
+
+[node name="LabelDeprisa" type="Label" parent="HUD"]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -237.0
+offset_top = -3.0
+offset_right = 243.0
+offset_bottom = 713.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_u6b0k")
+theme_override_font_sizes/font_size = 30
+text = "Fast!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="LevelAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_spvlt")
+
+[node name="Deprisa" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_uj0bk")
+
+[node name="FireflyTimer" type="Timer" parent="."]
+
+[node name="Froggy" parent="." instance=ExtResource("7_jiwsq")]
+position = Vector2(227, 586)
+
+[node name="Platform" type="StaticBody2D" parent="."]
+position = Vector2(226, 718)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
+position = Vector2(1, 25)
+shape = SubResource("RectangleShape2D_svxkk")
+
+[node name="Bordes" type="Node" parent="."]
+
+[node name="Left" type="StaticBody2D" parent="Bordes"]
+position = Vector2(-9, 37)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bordes/Left"]
+position = Vector2(8.5, 322.5)
+shape = SubResource("RectangleShape2D_yjbrq")
+
+[node name="Right" type="StaticBody2D" parent="Bordes"]
+position = Vector2(472, 37)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bordes/Right"]
+position = Vector2(8.5, 322.5)
+shape = SubResource("RectangleShape2D_yjbrq")
+
+[node name="Down" type="StaticBody2D" parent="Bordes"]
+position = Vector2(533, 727)
+rotation = 1.56834
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bordes/Down"]
+position = Vector2(-7.5, 322.5)
+shape = SubResource("RectangleShape2D_yjbrq")
+
+[node name="UP" type="StaticBody2D" parent="Bordes"]
+position = Vector2(533, 7.99994)
+rotation = 1.56834
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bordes/UP"]
+position = Vector2(-7.5, 322.5)
+shape = SubResource("RectangleShape2D_yjbrq")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ButtonContainer" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LeftButton" type="TouchScreenButton" parent="CanvasLayer/ButtonContainer"]
+self_modulate = Color(1, 1, 1, 0.627451)
+texture_filter = 1
+position = Vector2(71, 650)
+rotation = -3.14159
+scale = Vector2(0.75, 0.75)
+texture_normal = ExtResource("8_ocqmi")
+
+[node name="RightButton" type="TouchScreenButton" parent="CanvasLayer/ButtonContainer"]
+self_modulate = Color(1, 1, 1, 0.627451)
+texture_filter = 1
+position = Vector2(131, 590)
+scale = Vector2(0.75, 0.75)
+texture_normal = ExtResource("8_ocqmi")
+
+[node name="UpButton" type="TouchScreenButton" parent="CanvasLayer/ButtonContainer"]
+self_modulate = Color(1, 1, 1, 0.627451)
+texture_filter = 1
+position = Vector2(71, 590)
+rotation = -1.5708
+scale = Vector2(0.75, 0.75)
+texture_normal = ExtResource("8_ocqmi")
+
+[node name="DownButton" type="TouchScreenButton" parent="CanvasLayer/ButtonContainer"]
+self_modulate = Color(1, 1, 1, 0.627451)
+texture_filter = 1
+position = Vector2(131, 650)
+rotation = 1.5708
+scale = Vector2(0.75, 0.75)
+texture_normal = ExtResource("8_ocqmi")
+
+[node name="NivelAlto" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_wse7x")
+volume_db = 3.0
+attenuation = 1e-05
+
+[connection signal="hurt" from="Player" to="." method="_on_player_hurt"]
+[connection signal="picked" from="Player" to="." method="_on_player_picked"]
+[connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
+[connection signal="timeout" from="FireflyTimer" to="." method="_on_firefly_timer_timeout"]
+[connection signal="pressed" from="CanvasLayer/ButtonContainer/LeftButton" to="Player" method="_on_left_button_pressed"]
+[connection signal="released" from="CanvasLayer/ButtonContainer/LeftButton" to="Player" method="_on_left_button_released"]
+[connection signal="pressed" from="CanvasLayer/ButtonContainer/RightButton" to="Player" method="_on_right_button_pressed"]
+[connection signal="released" from="CanvasLayer/ButtonContainer/RightButton" to="Player" method="_on_right_button_released"]
+[connection signal="pressed" from="CanvasLayer/ButtonContainer/UpButton" to="Player" method="_on_up_button_pressed"]
+[connection signal="released" from="CanvasLayer/ButtonContainer/UpButton" to="Player" method="_on_up_button_released"]
+[connection signal="pressed" from="CanvasLayer/ButtonContainer/DownButton" to="Player" method="_on_down_button_pressed"]
+[connection signal="released" from="CanvasLayer/ButtonContainer/DownButton" to="Player" method="_on_down_button_released"]
+[connection signal="finished" from="NivelAlto" to="." method="_on_nivel_alto_finished"]

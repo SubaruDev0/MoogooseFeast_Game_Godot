@@ -1,0 +1,274 @@
+[gd_scene load_steps=4 format=3 uid="uid://g1hr1enp6lmd"]
+
+[ext_resource type="Script" path="res://menu/sounds_español.gd" id="1_5cogw"]
+[ext_resource type="FontFile" uid="uid://bxv7ewrcpy8ab" path="res://assets/Kenney Bold.ttf" id="2_xxqiy"]
+[ext_resource type="AudioStream" uid="uid://d0nyd0bgccblh" path="res://assets/AudiosLevels/CreditosSong.mp3" id="3_uv7o8"]
+
+[node name="SoundsEspañol" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5cogw")
+
+[node name="LabelTitulo" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -239.0
+offset_top = 19.0
+offset_right = 241.0
+offset_bottom = 107.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_xxqiy")
+theme_override_font_sizes/font_size = 33
+text = "Sonidos"
+horizontal_alignment = 1
+
+[node name="LabelTitulo2" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -239.0
+offset_top = 323.0
+offset_right = 241.0
+offset_bottom = 411.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_xxqiy")
+theme_override_font_sizes/font_size = 33
+text = "Musica"
+horizontal_alignment = 1
+
+[node name="LabelVersion" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -437.0
+offset_top = 698.0
+offset_right = 43.0
+offset_bottom = 803.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_xxqiy")
+theme_override_font_sizes/font_size = 10
+text = "Alpha 0.1"
+horizontal_alignment = 1
+
+[node name="BackButton" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 83.0
+offset_top = 310.0
+offset_right = 241.0
+offset_bottom = 357.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.776471, 0.156863, 0.156863, 1)
+theme_override_fonts/font = ExtResource("2_xxqiy")
+theme_override_font_sizes/font_size = 25
+text = "Volver"
+flat = true
+
+[node name="Sound1Label" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -234.0
+offset_top = 97.0
+offset_right = 239.0
+offset_bottom = 161.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_xxqiy")
+theme_override_font_sizes/font_size = 18
+text = "JoelAudio
+
+"
+horizontal_alignment = 1
+
+[node name="NameSound1" type="Label" parent="Sound1Label"]
+layout_mode = 0
+offset_left = -6.0
+offset_top = 34.0
+offset_right = 471.0
+offset_bottom = 69.0
+theme_override_font_sizes/font_size = 15
+text = "- LETTUCE_CRUNCH_002 -
+
+"
+horizontal_alignment = 1
+
+[node name="LinkSound1" type="Button" parent="Sound1Label"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -6.0
+offset_top = 34.0
+offset_right = 471.0
+offset_bottom = 69.0
+theme_override_colors/font_color = Color(0.117647, 0.564706, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.117647, 0.564706, 1, 1)
+theme_override_colors/font_focus_color = Color(0.117647, 0.564706, 1, 1)
+theme_override_font_sizes/font_size = 16
+text = "
+https://freesound.org/people/JoelAudio/sounds/135456/
+"
+flat = true
+
+[node name="Sound2Label" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -234.0
+offset_top = 209.0
+offset_right = 239.0
+offset_bottom = 273.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_xxqiy")
+theme_override_font_sizes/font_size = 18
+text = "NoahBangs
+
+"
+horizontal_alignment = 1
+
+[node name="NameSound2" type="Label" parent="Sound2Label"]
+layout_mode = 0
+offset_left = -6.0
+offset_top = 34.0
+offset_right = 471.0
+offset_bottom = 69.0
+theme_override_font_sizes/font_size = 15
+text = "- Ghost, Appear, 16-Bit -
+
+"
+horizontal_alignment = 1
+
+[node name="LinkSound2" type="Button" parent="Sound2Label"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -6.0
+offset_top = 34.0
+offset_right = 480.0
+offset_bottom = 90.0
+theme_override_colors/font_color = Color(0.117647, 0.564706, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.117647, 0.564706, 1, 1)
+theme_override_colors/font_focus_color = Color(0.117647, 0.564706, 1, 1)
+theme_override_font_sizes/font_size = 16
+text = "
+https://freesound.org/people/NoahBangs/sounds/715704/
+"
+flat = true
+
+[node name="Sound2Label2" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -234.0
+offset_top = 393.0
+offset_right = 239.0
+offset_bottom = 457.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_xxqiy")
+theme_override_font_sizes/font_size = 18
+text = "AdhesiveWombat
+
+"
+horizontal_alignment = 1
+
+[node name="NameSound2" type="Label" parent="Sound2Label2"]
+layout_mode = 0
+offset_left = -6.0
+offset_top = 34.0
+offset_right = 471.0
+offset_bottom = 69.0
+theme_override_font_sizes/font_size = 15
+text = "- Night Shade -"
+horizontal_alignment = 1
+
+[node name="LinkSound3" type="Button" parent="Sound2Label2"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -6.0
+offset_top = 34.0
+offset_right = 474.0
+offset_bottom = 111.0
+theme_override_colors/font_color = Color(0.117647, 0.564706, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.117647, 0.564706, 1, 1)
+theme_override_colors/font_focus_color = Color(0.117647, 0.564706, 1, 1)
+theme_override_font_sizes/font_size = 16
+text = "
+https://www.youtube.com/watch?v=mRN_T6JkH-c"
+flat = true
+
+[node name="Sound2Label3" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -234.0
+offset_top = 521.0
+offset_right = 239.0
+offset_bottom = 585.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_xxqiy")
+theme_override_font_sizes/font_size = 18
+text = "Jorge Hernandez 
+"
+horizontal_alignment = 1
+
+[node name="NameSound2" type="Label" parent="Sound2Label3"]
+layout_mode = 0
+offset_left = -6.0
+offset_top = 34.0
+offset_right = 471.0
+offset_bottom = 69.0
+theme_override_font_sizes/font_size = 15
+text = "- Chopsticks -"
+horizontal_alignment = 1
+
+[node name="LinkSound4" type="Button" parent="Sound2Label3"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -6.0
+offset_top = 34.0
+offset_right = 474.0
+offset_bottom = 111.0
+theme_override_colors/font_color = Color(0.117647, 0.564706, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.117647, 0.564706, 1, 1)
+theme_override_colors/font_focus_color = Color(0.117647, 0.564706, 1, 1)
+theme_override_font_sizes/font_size = 16
+text = "
+https://www.youtube.com/watch?v=G-FGiICah8Q"
+flat = true
+
+[node name="CreditosSong" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_uv7o8")
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="Sound1Label/LinkSound1" to="." method="_on_link_sound_1_pressed"]
+[connection signal="pressed" from="Sound2Label/LinkSound2" to="." method="_on_link_sound_2_pressed"]
+[connection signal="pressed" from="Sound2Label2/LinkSound3" to="." method="_on_link_sound_3_pressed"]
+[connection signal="pressed" from="Sound2Label3/LinkSound4" to="." method="_on_link_sound_4_pressed"]
+[connection signal="finished" from="CreditosSong" to="." method="_on_creditos_song_finished"]

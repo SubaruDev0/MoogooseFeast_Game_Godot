@@ -1,0 +1,142 @@
+[gd_scene load_steps=12 format=3 uid="uid://bsb4dc6r64kb1"]
+
+[ext_resource type="Texture2D" uid="uid://drw0icytbyj55" path="res://assets/enemy/frog.png" id="1_01t33"]
+[ext_resource type="Script" path="res://enemy/froggy.gd" id="1_jnsct"]
+[ext_resource type="AudioStream" uid="uid://eml1awun3omc" path="res://assets/audio/FroggySound.wav" id="3_81eqg"]
+[ext_resource type="AudioStream" uid="uid://2qwvp8kp43eo" path="res://assets/audio/BreatheSound.ogg" id="4_4j0id"]
+
+[sub_resource type="Animation" id="Animation_84uq4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_egyjd"]
+resource_name = "breathe"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 3, 4]
+}
+
+[sub_resource type="Animation" id="Animation_sousl"]
+resource_name = "idle"
+length = 0.45
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_8kqj6"]
+resource_name = "jump_down"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+
+[sub_resource type="Animation" id="Animation_4wpap"]
+resource_name = "jump_up"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [5]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7ili1"]
+_data = {
+"RESET": SubResource("Animation_84uq4"),
+"breathe": SubResource("Animation_egyjd"),
+"idle": SubResource("Animation_sousl"),
+"jump_down": SubResource("Animation_8kqj6"),
+"jump_up": SubResource("Animation_4wpap")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hqbms"]
+size = Vector2(41.25, 39.75)
+
+[node name="Froggy" type="CharacterBody2D" groups=["enemy"]]
+script = ExtResource("1_jnsct")
+gravity_power = 1000
+jump_power = -350
+speed = 200
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(2.5, -7)
+scale = Vector2(3, 3)
+texture = ExtResource("1_01t33")
+hframes = 7
+frame = 1
+metadata/_edit_group_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_7ili1")
+}
+autoplay = "jump_down"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.375, -1.125)
+shape = SubResource("RectangleShape2D_hqbms")
+metadata/_edit_group_ = true
+
+[node name="FroggyTimer" type="Timer" parent="."]
+
+[node name="FroggyJumpTimer" type="Timer" parent="."]
+
+[node name="SpeedIncreaseTimer" type="Timer" parent="."]
+wait_time = 20.0
+autostart = true
+
+[node name="FroggySound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_81eqg")
+
+[node name="BreatheSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_4j0id")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="timeout" from="FroggyTimer" to="." method="_on_froggy_timer_timeout"]
+[connection signal="timeout" from="FroggyJumpTimer" to="." method="_on_froggy_jump_timer_timeout"]
+[connection signal="timeout" from="SpeedIncreaseTimer" to="." method="_on_speed_increase_timer_timeout"]

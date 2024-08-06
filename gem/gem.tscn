@@ -1,0 +1,81 @@
+[gd_scene load_steps=15 format=3 uid="uid://dfpl2s2yffpss"]
+
+[ext_resource type="Script" path="res://gem/gem.gd" id="1_eairi"]
+[ext_resource type="Texture2D" uid="uid://o1n4p7dwui0j" path="res://assets/gem/gem-01.png" id="1_fj6ji"]
+[ext_resource type="Texture2D" uid="uid://cifu64p73bgps" path="res://assets/gem/gem-02.png" id="2_ycssi"]
+[ext_resource type="Texture2D" uid="uid://yeovoan5vais" path="res://assets/gem/gem-03.png" id="3_dgyd7"]
+[ext_resource type="Texture2D" uid="uid://c5j47wpy66dp1" path="res://assets/gem/gem-04.png" id="4_h72ti"]
+[ext_resource type="Texture2D" uid="uid://d4luj3c4kh10t" path="res://assets/gem/gem-05.png" id="5_5srop"]
+[ext_resource type="Texture2D" uid="uid://bigj1eld00hej" path="res://assets/cherry/cherry-01.png" id="7_4fno3"]
+[ext_resource type="Texture2D" uid="uid://qdtp0gbej54l" path="res://assets/gem/gem-06.png" id="7_60ta5"]
+[ext_resource type="Texture2D" uid="uid://dl3q87tj1c3td" path="res://assets/cherry/cherry-02.png" id="8_f7dfm"]
+[ext_resource type="Texture2D" uid="uid://ipj6ddgcoyjn" path="res://assets/cherry/cherry-03.png" id="9_rap2i"]
+[ext_resource type="Texture2D" uid="uid://x3wdc7f42h10" path="res://assets/cherry/cherry-04.png" id="10_ykpkr"]
+[ext_resource type="Texture2D" uid="uid://cwy4kb7o775l" path="res://assets/cherry/cherry-05.png" id="11_56cxu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u5vps"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_fj6ji")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ycssi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_dgyd7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_h72ti")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_5srop")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_60ta5")
+}],
+"loop": true,
+"name": &"Brillitos gema",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_4fno3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_f7dfm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_rap2i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ykpkr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_56cxu")
+}],
+"loop": true,
+"name": &"Firefly",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vi3h6"]
+radius = 36.0
+
+[node name="Gem" type="Area2D" groups=["gem"]]
+script = ExtResource("1_eairi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+process_mode = 3
+texture_filter = 1
+position = Vector2(33.25, 22.25)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_u5vps")
+animation = &"Brillitos gema"
+autoplay = "Brillitos gema"
+frame_progress = 0.106715
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(33, 21)
+shape = SubResource("CircleShape2D_vi3h6")

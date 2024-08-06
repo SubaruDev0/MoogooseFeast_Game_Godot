@@ -1,0 +1,214 @@
+[gd_scene load_steps=4 format=3 uid="uid://cscwpsolq086r"]
+
+[ext_resource type="Script" path="res://main/level_selector_ingles.gd" id="1_uudj6"]
+[ext_resource type="FontFile" uid="uid://bxv7ewrcpy8ab" path="res://assets/Kenney Bold.ttf" id="1_y50cn"]
+[ext_resource type="AudioStream" uid="uid://d0nyd0bgccblh" path="res://assets/AudiosLevels/CreditosSong.mp3" id="2_kaicc"]
+
+[node name="LevelSelectorIngles" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uudj6")
+
+[node name="nota" type="Label" parent="."]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 134.0
+offset_right = 477.0
+offset_bottom = 206.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
+text = "\"Get a Highest Record in any of these levels,
+to unlock their selection\""
+horizontal_alignment = 1
+
+[node name="nota3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 134.0
+offset_right = 477.0
+offset_bottom = 206.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
+text = "\"Get a Highest Record in any of these levels,
+to unlock their selection\""
+horizontal_alignment = 1
+
+[node name="nota2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 186.0
+offset_right = 477.0
+offset_bottom = 208.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 10
+text = "( A Highest Record, considers both Level and Score )"
+horizontal_alignment = 1
+
+[node name="LabelTitulo" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -239.0
+offset_top = 19.0
+offset_right = 241.0
+offset_bottom = 107.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_y50cn")
+theme_override_font_sizes/font_size = 33
+text = "Level 
+Selector"
+horizontal_alignment = 1
+
+[node name="LabelVersion" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -437.0
+offset_top = 698.0
+offset_right = 43.0
+offset_bottom = 803.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_y50cn")
+theme_override_font_sizes/font_size = 10
+text = "Alpha 0.1"
+horizontal_alignment = 1
+
+[node name="LabelLevel20" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -236.0
+offset_top = 233.0
+offset_right = 137.0
+offset_bottom = 297.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.843137, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0.843137, 0, 1)
+theme_override_fonts/font = ExtResource("1_y50cn")
+theme_override_font_sizes/font_size = 20
+text = "Level 20 \"The Jungle\"
+"
+flat = true
+
+[node name="LabelLevel40" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -231.0
+offset_top = 297.0
+offset_right = 32.0
+offset_bottom = 361.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.843137, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0.843137, 0, 1)
+theme_override_fonts/font = ExtResource("1_y50cn")
+theme_override_font_sizes/font_size = 20
+text = "Level 40 \"El xd\"
+"
+flat = true
+
+[node name="LabelLevel60" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -238.0
+offset_top = 361.0
+offset_right = -79.0
+offset_bottom = 425.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.843137, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0.843137, 0, 1)
+theme_override_fonts/font = ExtResource("1_y50cn")
+theme_override_font_sizes/font_size = 20
+text = "Level 60
+"
+flat = true
+
+[node name="LabelLevel80" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -238.0
+offset_top = 425.0
+offset_right = -79.0
+offset_bottom = 489.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.843137, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0.843137, 0, 1)
+theme_override_fonts/font = ExtResource("1_y50cn")
+theme_override_font_sizes/font_size = 20
+text = "Level 80
+"
+flat = true
+
+[node name="LabelLevel100" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -231.0
+offset_top = 489.0
+offset_right = -72.0
+offset_bottom = 553.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.843137, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0.843137, 0, 1)
+theme_override_fonts/font = ExtResource("1_y50cn")
+theme_override_font_sizes/font_size = 20
+text = "Level 100
+"
+flat = true
+
+[node name="BackButton" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 133.0
+offset_top = 310.0
+offset_right = 241.0
+offset_bottom = 357.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.776471, 0.156863, 0.156863, 1)
+theme_override_fonts/font = ExtResource("1_y50cn")
+theme_override_font_sizes/font_size = 25
+text = "Back"
+flat = true
+
+[node name="CreditosSong" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_kaicc")
+volume_db = -80.0
+
+[connection signal="pressed" from="LabelLevel20" to="." method="_on_label_level_20_pressed"]
+[connection signal="pressed" from="LabelLevel40" to="." method="_on_label_level_40_pressed"]
+[connection signal="pressed" from="LabelLevel60" to="." method="_on_label_level_60_pressed"]
+[connection signal="pressed" from="LabelLevel80" to="." method="_on_label_level_80_pressed"]
+[connection signal="pressed" from="LabelLevel100" to="." method="_on_label_level_100_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
