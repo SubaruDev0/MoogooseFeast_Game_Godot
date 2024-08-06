@@ -17,6 +17,9 @@ En Mongoose Feast, eres una mangosta valiente que se embarca en una aventura fre
 
 ¡Descubre cuán ágil y rápido puedes ser en esta emocionante aventura de supervivencia!
 
-## Próximamente
+## Consigue el Juego Aquí
 
-Disponible PROXIMAMENTE para Descargar en Google Play Store e Itch.io.
+[**Descarga Mongoose Feast en Itch.io**](https://subarudev.itch.io/mongoose-feast)
+
+¡Disponible PROXIMAMENTE para descargar en Google Play Store 
+
