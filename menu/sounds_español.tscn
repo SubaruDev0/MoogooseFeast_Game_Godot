@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://g1hr1enp6lmd"]
+[gd_scene load_steps=5 format=3 uid="uid://g1hr1enp6lmd"]
 
 [ext_resource type="Script" path="res://menu/sounds_español.gd" id="1_5cogw"]
+[ext_resource type="Texture2D" uid="uid://f4lu3sfns4rq" path="res://assets/HUD/Fondomenu.jpeg" id="2_q5k40"]
 [ext_resource type="FontFile" uid="uid://bxv7ewrcpy8ab" path="res://assets/Kenney Bold.ttf" id="2_xxqiy"]
 [ext_resource type="AudioStream" uid="uid://d0nyd0bgccblh" path="res://assets/AudiosLevels/CreditosSong.mp3" id="3_uv7o8"]
 
@@ -12,6 +13,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5cogw")
+
+[node name="Fondomenu" type="Sprite2D" parent="."]
+modulate = Color(0.388107, 0.577009, 1, 1)
+position = Vector2(240, 360.25)
+scale = Vector2(0.46875, 0.401507)
+texture = ExtResource("2_q5k40")
 
 [node name="LabelTitulo" type="Label" parent="."]
 texture_filter = 1
@@ -119,10 +126,10 @@ offset_left = -6.0
 offset_top = 34.0
 offset_right = 471.0
 offset_bottom = 69.0
-theme_override_colors/font_color = Color(0.117647, 0.564706, 1, 1)
+theme_override_colors/font_color = Color(1, 0.843137, 0, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(0.117647, 0.564706, 1, 1)
-theme_override_colors/font_focus_color = Color(0.117647, 0.564706, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 0.843137, 0, 1)
+theme_override_colors/font_focus_color = Color(1, 0.843137, 0, 1)
 theme_override_font_sizes/font_size = 16
 text = "
 https://freesound.org/people/JoelAudio/sounds/135456/
@@ -166,10 +173,10 @@ offset_left = -6.0
 offset_top = 34.0
 offset_right = 480.0
 offset_bottom = 90.0
-theme_override_colors/font_color = Color(0.117647, 0.564706, 1, 1)
+theme_override_colors/font_color = Color(1, 0.843137, 0, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(0.117647, 0.564706, 1, 1)
-theme_override_colors/font_focus_color = Color(0.117647, 0.564706, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 0.843137, 0, 1)
+theme_override_colors/font_focus_color = Color(1, 0.843137, 0, 1)
 theme_override_font_sizes/font_size = 16
 text = "
 https://freesound.org/people/NoahBangs/sounds/715704/
@@ -211,10 +218,10 @@ offset_left = -6.0
 offset_top = 34.0
 offset_right = 474.0
 offset_bottom = 111.0
-theme_override_colors/font_color = Color(0.117647, 0.564706, 1, 1)
+theme_override_colors/font_color = Color(1, 0.843137, 0, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(0.117647, 0.564706, 1, 1)
-theme_override_colors/font_focus_color = Color(0.117647, 0.564706, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 0.843137, 0, 1)
+theme_override_colors/font_focus_color = Color(1, 0.843137, 0, 1)
 theme_override_font_sizes/font_size = 16
 text = "
 https://www.youtube.com/watch?v=mRN_T6JkH-c"
@@ -254,10 +261,10 @@ offset_left = -6.0
 offset_top = 34.0
 offset_right = 474.0
 offset_bottom = 111.0
-theme_override_colors/font_color = Color(0.117647, 0.564706, 1, 1)
+theme_override_colors/font_color = Color(1, 0.843137, 0, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(0.117647, 0.564706, 1, 1)
-theme_override_colors/font_focus_color = Color(0.117647, 0.564706, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 0.843137, 0, 1)
+theme_override_colors/font_focus_color = Color(1, 0.843137, 0, 1)
 theme_override_font_sizes/font_size = 16
 text = "
 https://www.youtube.com/watch?v=G-FGiICah8Q"

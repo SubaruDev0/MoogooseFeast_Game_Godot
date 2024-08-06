@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://cqhmr5lrmc7q"]
 
 [ext_resource type="Script" path="res://main/main.gd" id="1_ouc5l"]
-[ext_resource type="Texture2D" uid="uid://d1ymcif0rou75" path="res://main/Background 1.png" id="2_1yhyo"]
+[ext_resource type="Texture2D" uid="uid://d1ymcif0rou75" path="res://Background 1.png" id="2_1yhyo"]
 [ext_resource type="PackedScene" uid="uid://cbbr6dhnp53u1" path="res://player/player.tscn" id="2_hrnrw"]
 [ext_resource type="FontFile" uid="uid://bxv7ewrcpy8ab" path="res://assets/Kenney Bold.ttf" id="4_bu3x7"]
 [ext_resource type="Script" path="res://main/HUD.gd" id="4_fci87"]
@@ -21,7 +21,8 @@ size = Vector2(3, 719)
 script = ExtResource("1_ouc5l")
 
 [node name="Background 1-19" type="Sprite2D" parent="."]
-position = Vector2(237, 361)
+position = Vector2(239, 362.5)
+scale = Vector2(1.00833, 1.01806)
 texture = ExtResource("2_1yhyo")
 
 [node name="Player" parent="." instance=ExtResource("2_hrnrw")]

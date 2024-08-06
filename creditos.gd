@@ -55,3 +55,7 @@ func _on_arte_2_pressed():
 
 func _on_arte_3_pressed():
 	OS.shell_open("https://www.instagram.com/jaboo_alo/")
+
+
+func _on_arte_4_pressed():
+	OS.shell_open("https://www.instagram.com/young_zattu/")

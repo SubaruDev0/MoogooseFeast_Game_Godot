@@ -17,7 +17,7 @@ var game_over_timer = Timer.new()
 var gold_color = Color("#F5C842")
 var froggy_original_scale = Vector2.ONE
 var froggy_giant_scale = Vector2(2, 2)
-var froggy_giant_duration = 2
+var froggy_giant_duration = 5
 var froggy_giant_platform_offset = Vector2(0, 20)
 var platform_y_position = 700
 

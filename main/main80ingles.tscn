@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://ct0lhje600w5n"]
+[gd_scene load_steps=13 format=3 uid="uid://ct0lhje600w5n"]
 
 [ext_resource type="Script" path="res://main/main80ingles.gd" id="1_iikh1"]
 [ext_resource type="PackedScene" uid="uid://cbbr6dhnp53u1" path="res://player/player.tscn" id="2_7exbu"]
+[ext_resource type="Texture2D" uid="uid://d1ymcif0rou75" path="res://Background 1.png" id="2_hjd7g"]
 [ext_resource type="Script" path="res://main/HUD.gd" id="3_puh24"]
 [ext_resource type="FontFile" uid="uid://bxv7ewrcpy8ab" path="res://assets/Kenney Bold.ttf" id="4_nbsse"]
 [ext_resource type="AudioStream" uid="uid://baw06ntj1ixno" path="res://assets/audio/Level.wav" id="5_u47hb"]
@@ -18,6 +19,11 @@ size = Vector2(3, 719)
 
 [node name="Main80Ingles" type="Node2D"]
 script = ExtResource("1_iikh1")
+
+[node name="Background 1-19" type="Sprite2D" parent="."]
+position = Vector2(239, 360.5)
+scale = Vector2(1.00833, 1.00694)
+texture = ExtResource("2_hjd7g")
 
 [node name="Player" parent="." instance=ExtResource("2_7exbu")]
 position = Vector2(105, 44)
