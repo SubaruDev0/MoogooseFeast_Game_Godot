@@ -11,7 +11,7 @@ var Firefly = preload("res://gem/firefly.tscn")
 # Variables del juego
 var score = 0
 var level = 20
-var tiempo_atras = 30
+var tiempo_atras = 10
 var incremento_speed = 20
 var game_over_timer = Timer.new()
 var gold_color = Color("#F5C842")

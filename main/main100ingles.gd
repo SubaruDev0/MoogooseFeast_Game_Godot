@@ -11,13 +11,13 @@ var Firefly = preload("res://gem/firefly.tscn")
 # Variables del juego
 var score = 0
 var level = 100
-var tiempo_atras = 30
+var tiempo_atras = 10
 var incremento_speed = 20
 var game_over_timer = Timer.new()
 var gold_color = Color("#F5C842")
 var froggy_original_scale = Vector2.ONE
 var froggy_giant_scale = Vector2(2, 2)
-var froggy_giant_duration = 11
+var froggy_giant_duration = 10
 var froggy_giant_platform_offset = Vector2(0, 20)
 var platform_y_position = 700
 
