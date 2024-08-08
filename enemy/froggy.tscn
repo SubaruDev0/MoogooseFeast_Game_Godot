@@ -99,7 +99,7 @@ size = Vector2(41.25, 39.75)
 [node name="Froggy" type="CharacterBody2D" groups=["enemy"]]
 script = ExtResource("1_jnsct")
 gravity_power = 1000
-jump_power = -350
+jump_power = -360
 speed = 200
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

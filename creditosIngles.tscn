@@ -239,8 +239,8 @@ horizontal_alignment = 1
 stream = ExtResource("3_0nm8v")
 volume_db = -80.0
 
-[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="SoundsButton" to="." method="_on_sounds_button_pressed"]
 [connection signal="pressed" from="ArteLabel/Arte1" to="." method="_on_arte_1_pressed"]
 [connection signal="pressed" from="ArteLabel/Arte2" to="." method="_on_arte_2_pressed"]

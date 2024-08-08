@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cscwpsolq086r"]
+[gd_scene load_steps=5 format=3 uid="uid://cscwpsolq086r"]
 
 [ext_resource type="Script" path="res://main/level_selector_ingles.gd" id="1_uudj6"]
 [ext_resource type="FontFile" uid="uid://bxv7ewrcpy8ab" path="res://assets/Kenney Bold.ttf" id="1_y50cn"]
+[ext_resource type="Texture2D" uid="uid://f4lu3sfns4rq" path="res://assets/HUD/Fondomenu.jpeg" id="2_1vnrq"]
 [ext_resource type="AudioStream" uid="uid://d0nyd0bgccblh" path="res://assets/AudiosLevels/CreditosSong.mp3" id="2_kaicc"]
 
 [node name="LevelSelectorIngles" type="Control"]
@@ -12,6 +13,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_uudj6")
+
+[node name="Fondomenu" type="Sprite2D" parent="."]
+modulate = Color(0.388107, 0.577009, 1, 1)
+position = Vector2(240, 360.25)
+scale = Vector2(0.46875, 0.401507)
+texture = ExtResource("2_1vnrq")
 
 [node name="nota" type="Label" parent="."]
 layout_mode = 0
@@ -97,7 +104,7 @@ theme_override_colors/font_pressed_color = Color(1, 0.843137, 0, 1)
 theme_override_colors/font_hover_color = Color(1, 0.843137, 0, 1)
 theme_override_fonts/font = ExtResource("1_y50cn")
 theme_override_font_sizes/font_size = 20
-text = "Level 20 \"The Jungle\"
+text = "Level 20 \"                                     \"
 "
 flat = true
 
@@ -117,7 +124,7 @@ theme_override_colors/font_pressed_color = Color(1, 0.843137, 0, 1)
 theme_override_colors/font_hover_color = Color(1, 0.843137, 0, 1)
 theme_override_fonts/font = ExtResource("1_y50cn")
 theme_override_font_sizes/font_size = 20
-text = "Level 40 \"El xd\"
+text = "Level 40 \"                 \"
 "
 flat = true
 

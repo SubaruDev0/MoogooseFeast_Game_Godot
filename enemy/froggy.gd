@@ -4,7 +4,7 @@ extends CharacterBody2D
 @export var gravity_power: int  # Potencia de la gravedad
 @export var jump_power: int  # Potencia del salto
 @export var speed: int  # Velocidad de movimiento
-@export var speed_max: int = 500  # Velocidad máxima de movimiento
+@export var speed_max: int = 600  # Velocidad máxima de movimiento
 
 enum { IDLE, BREATHE, JUMP_UP, JUMP_DOWN }  # Estados posibles del personaje
 
@@ -80,11 +80,11 @@ func _physics_process(delta):
 
 func set_timer_interval():
 	# Configura los temporizadores para "Breathe" y "Jump"
-	var intervalo = randi_range(3, 5)
+	var intervalo = randi_range(2, 5)
 	$FroggyTimer.wait_time = intervalo
 	$FroggyTimer.start()
 
-	intervalo = randi_range(3, 5)
+	intervalo = randi_range(2, 5)
 	$FroggyJumpTimer.wait_time = intervalo
 	$FroggyJumpTimer.start()
 

@@ -17,7 +17,7 @@ var game_over_timer = Timer.new()
 var gold_color = Color("#F5C842")
 var froggy_original_scale = Vector2.ONE
 var froggy_giant_scale = Vector2(2, 2)
-var froggy_giant_duration = 5
+var froggy_giant_duration = 6
 var froggy_giant_platform_offset = Vector2(0, 20)
 var platform_y_position = 700
 
@@ -266,7 +266,7 @@ func check_froggy_growth():
 		if not froggy_is_giant:
 			grow_froggy()
 			froggy_is_giant = true
-	elif (level % 20) == 2:
+	elif (level % 20) == 6:
 		if froggy_is_giant:
 			restore_froggy()
 			froggy_is_giant = false
@@ -275,12 +275,11 @@ func check_froggy_growth():
 func grow_froggy():
 	# Hacer crecer a Froggy
 	$Froggy.scale = froggy_giant_scale
-	$Froggy/CollisionShape2D.scale *= 0.9  # Reducir un poco el tamaño de las colisiones
+	$Froggy/CollisionShape2D.scale *= 1.25  # aumentar un poco el tamaño de las colisiones
 	$Platform.position.y += froggy_giant_platform_offset.y
 
 
 func restore_froggy():
 	# Restaurar el tamaño original de Froggy
 	$Froggy.scale = froggy_original_scale
-	$Froggy/CollisionShape2D.scale /= 0.9  # Restaurar el tamaño de las colisiones
 	$Platform.position.y -= froggy_giant_platform_offset.y
