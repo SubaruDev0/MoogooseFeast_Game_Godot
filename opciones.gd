@@ -4,7 +4,7 @@ extends Control
 
 # Llamada cuando el nodo entra en el árbol de la escena por primera vez.
 func _ready():
-	pass # Reemplaza con el cuerpo de la función.
+	pass 
 
 
 func _on_back_button_pressed():
