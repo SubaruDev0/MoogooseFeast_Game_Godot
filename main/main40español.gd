@@ -283,3 +283,5 @@ func restore_froggy():
 	# Restaurar el tamaño original de Froggy
 	$Froggy.scale = froggy_original_scale
 	$Platform.position.y -= froggy_giant_platform_offset.y
+	
+

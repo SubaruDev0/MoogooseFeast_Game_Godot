@@ -55,6 +55,23 @@ theme_override_font_sizes/font_size = 10
 text = "Alpha 0.1"
 horizontal_alignment = 1
 
+[node name="LabelVersion2" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -239.0
+offset_top = 706.0
+offset_right = 241.0
+offset_bottom = 811.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.505882, 0.505882, 0.505882, 1)
+theme_override_fonts/font = ExtResource("1_xjir8")
+theme_override_font_sizes/font_size = 7
+text = "(Disponible en version de escritorio)"
+horizontal_alignment = 1
+
 [node name="LabelLastScore" type="Label" parent="."]
 texture_filter = 1
 layout_mode = 1
@@ -235,15 +252,16 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -70.0
-offset_top = 303.0
+offset_top = 295.0
 offset_right = 65.0
-offset_bottom = 368.0
+offset_bottom = 360.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0.776471, 0.156863, 0.156863, 1)
 theme_override_fonts/font = ExtResource("1_xjir8")
 theme_override_font_sizes/font_size = 20
+disabled = true
 text = "Salir"
 flat = true
 

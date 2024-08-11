@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://caaspendwl20h"]
+[gd_scene load_steps=17 format=3 uid="uid://caaspendwl20h"]
 
 [ext_resource type="Script" path="res://main/main40ingles.gd" id="1_7vmhi"]
 [ext_resource type="Texture2D" uid="uid://d1ymcif0rou75" path="res://Background 1.png" id="2_6o4wi"]
@@ -10,6 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://bsb4dc6r64kb1" path="res://enemy/froggy.tscn" id="7_jiwsq"]
 [ext_resource type="Texture2D" uid="uid://df665857kmetv" path="res://misc/touch_button.png" id="8_ocqmi"]
 [ext_resource type="AudioStream" uid="uid://c3q5tev305uae" path="res://assets/AudiosLevels/Nivel-alto.ogg" id="9_wse7x"]
+[ext_resource type="Texture2D" uid="uid://bplcq1pleqyhs" path="res://assets/HUD/media-pause-xxl.png" id="11_1aqwq"]
+[ext_resource type="Script" path="res://main/MenuPausaIngles.gd" id="12_tdkur"]
+[ext_resource type="Script" path="res://menu/ControlAjustesIngles.gd" id="13_arso4"]
+[ext_resource type="AudioStream" uid="uid://drkjrokm2e0b4" path="res://assets/AudiosLevels/Pause.wav" id="14_ngy1j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_svxkk"]
 size = Vector2(73, 10)
@@ -253,6 +257,182 @@ stream = ExtResource("9_wse7x")
 volume_db = 3.0
 attenuation = 1e-05
 
+[node name="PauseButton" type="Button" parent="."]
+process_mode = 1
+texture_filter = 1
+offset_left = 11.0
+offset_top = 658.0
+offset_right = 305.0
+offset_bottom = 933.0
+scale = Vector2(0.119141, 0.185547)
+icon = ExtResource("11_1aqwq")
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="MenuPausaIngles" type="Control" parent="."]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("12_tdkur")
+metadata/_edit_use_anchors_ = true
+
+[node name="ControlAjustesIngles" type="Control" parent="MenuPausaIngles"]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 512.0
+offset_top = 158.0
+offset_right = 978.0
+offset_bottom = 573.0
+script = ExtResource("13_arso4")
+
+[node name="BackgroundBlur" type="ColorRect" parent="MenuPausaIngles/ControlAjustesIngles"]
+layout_mode = 0
+offset_left = -522.0
+offset_top = -163.0
+offset_right = -4.0
+offset_bottom = 611.0
+color = Color(0, 0, 0, 0.00392157)
+
+[node name="ColorRect" type="ColorRect" parent="MenuPausaIngles/ControlAjustesIngles"]
+layout_mode = 0
+offset_left = -504.0
+offset_right = -39.0
+offset_bottom = 414.0
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="LabelTitulo2" type="Label" parent="MenuPausaIngles/ControlAjustesIngles"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -736.0
+offset_top = 41.0
+offset_right = -256.0
+offset_bottom = 129.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_u6b0k")
+theme_override_font_sizes/font_size = 33
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="BackButton2" type="Button" parent="MenuPausaIngles/ControlAjustesIngles"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -723.0
+offset_top = 152.5
+offset_right = -561.0
+offset_bottom = 198.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.4, 0.733333, 0.415686, 1)
+theme_override_fonts/font = ExtResource("4_u6b0k")
+theme_override_font_sizes/font_size = 20
+text = "Continue"
+flat = true
+
+[node name="VolumenLabel2" type="Label" parent="MenuPausaIngles/ControlAjustesIngles"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -730.0
+offset_top = 135.0
+offset_right = -590.0
+offset_bottom = 165.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_u6b0k")
+theme_override_font_sizes/font_size = 20
+text = "Volume"
+horizontal_alignment = 1
+
+[node name="FullScreenButton" type="CheckButton" parent="MenuPausaIngles/ControlAjustesIngles"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -737.0
+offset_top = 232.0
+offset_right = -273.0
+offset_bottom = 270.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_u6b0k")
+theme_override_font_sizes/font_size = 20
+text = "  Full Screen"
+flat = true
+
+[node name="NumVolumenLabel2" type="Label" parent="MenuPausaIngles/ControlAjustesIngles"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -329.5
+offset_top = 137.0
+offset_right = -275.5
+offset_bottom = 160.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_u6b0k")
+theme_override_font_sizes/font_size = 15
+text = "100%"
+horizontal_alignment = 1
+
+[node name="VolumenBarra2" type="HSlider" parent="MenuPausaIngles/ControlAjustesIngles"]
+layout_mode = 0
+offset_left = -356.0
+offset_top = 138.0
+offset_right = -101.0
+offset_bottom = 161.0
+step = 5.0
+value = 100.0
+
+[node name="SalirButton" type="Button" parent="MenuPausaIngles/ControlAjustesIngles"]
+process_mode = 3
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = 153.5
+offset_right = -272.0
+offset_bottom = 199.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.776471, 0.156863, 0.156863, 1)
+theme_override_fonts/font = ExtResource("4_u6b0k")
+theme_override_font_sizes/font_size = 20
+text = "Quit"
+flat = true
+
+[node name="BackgroundBlocker" type="ColorRect" parent="MenuPausaIngles"]
+process_mode = 3
+visible = false
+self_modulate = Color(1, 1, 1, 0.00392157)
+offset_right = 486.0
+offset_bottom = 722.0
+color = Color(0, 0, 0, 1)
+
+[node name="Pause" type="AudioStreamPlayer" parent="MenuPausaIngles"]
+stream = ExtResource("14_ngy1j")
+volume_db = 15.0
+
 [connection signal="hurt" from="Player" to="." method="_on_player_hurt"]
 [connection signal="picked" from="Player" to="." method="_on_player_picked"]
 [connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
@@ -266,3 +446,9 @@ attenuation = 1e-05
 [connection signal="pressed" from="CanvasLayer/ButtonContainer/DownButton" to="Player" method="_on_down_button_pressed"]
 [connection signal="released" from="CanvasLayer/ButtonContainer/DownButton" to="Player" method="_on_down_button_released"]
 [connection signal="finished" from="NivelAlto" to="." method="_on_nivel_alto_finished"]
+[connection signal="pressed" from="PauseButton" to="MenuPausaIngles" method="_on_pause_button_pressed"]
+[connection signal="pressed" from="MenuPausaIngles/ControlAjustesIngles/BackButton2" to="MenuPausaIngles/ControlAjustesIngles" method="_on_back_button_2_pressed"]
+[connection signal="pressed" from="MenuPausaIngles/ControlAjustesIngles/FullScreenButton" to="MenuPausaIngles/ControlAjustesIngles" method="_on_full_screen_button_pressed"]
+[connection signal="toggled" from="MenuPausaIngles/ControlAjustesIngles/FullScreenButton" to="MenuPausaIngles/ControlAjustesIngles" method="_on_full_screen_button_toggled"]
+[connection signal="value_changed" from="MenuPausaIngles/ControlAjustesIngles/VolumenBarra2" to="MenuPausaIngles/ControlAjustesIngles" method="_on_volumen_barra_2_value_changed"]
+[connection signal="pressed" from="MenuPausaIngles/ControlAjustesIngles/SalirButton" to="MenuPausaIngles" method="_on_salir_button_pressed"]

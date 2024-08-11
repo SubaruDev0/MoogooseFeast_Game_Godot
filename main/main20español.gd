@@ -283,3 +283,8 @@ func restore_froggy():
 	# Restaurar el tamaño original de Froggy
 	$Froggy.scale = froggy_original_scale
 	$Platform.position.y -= froggy_giant_platform_offset.y
+
+
+
+func _on_salir_button_pressed():
+	get_tree().change_scene_to_file("res://menu/menu.tscn")

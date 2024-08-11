@@ -31,6 +31,7 @@ func _ready():
 # Función que se llama cuando se presiona el botón de regreso.
 # Guarda el volumen actual y oculta la configuración.
 func _on_back_button_2_pressed():
+	get_tree().paused = false
 	save_volume_to_file($VolumenBarra2.value / 100.0)
 	hide_settings()
 
@@ -47,20 +48,13 @@ func _on_creditos_button_2_pressed():
 func move_to_center():
 	if not self.visible:
 		self.visible = true
-		self.modulate.a = 0.0  # Establece la opacidad a 0 para comenzar la animación desde invisible
 
-	# Crea un Tween para animar la aparición del nodo.
-	var tween : Tween = get_tree().create_tween().set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
-	tween.tween_property(self, "modulate:a", 1.0, 0.3)  # Anima la opacidad a 1.0 en 0.3 segundos
-	await tween.finished
 
 
 # Oculta la configuración con una animación.
 # Crea un Tween para animar la desaparición del nodo.
 func hide_settings():
-	var tween : Tween = get_tree().create_tween().set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
-	tween.tween_property(self, "modulate:a", 0.0, 0.3)  # Anima la opacidad a 0.0 en 0.3 segundos
-	await tween.finished
+
 	
 	# Después de la animación, oculta el nodo ControlAjustes.
 	self.visible = false
