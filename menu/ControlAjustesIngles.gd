@@ -31,6 +31,7 @@ func _ready():
 # Función que se llama cuando se presiona el botón de regreso.
 # Guarda el volumen actual y oculta la configuración.
 func _on_back_button_2_pressed():
+	$Despause.play()
 	get_tree().paused = false
 	save_volume_to_file($VolumenBarra2.value / 100.0)
 	hide_settings()

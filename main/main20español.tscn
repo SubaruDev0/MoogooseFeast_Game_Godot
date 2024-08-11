@@ -443,6 +443,7 @@ volume_db = 10.0
 process_mode = 3
 visible = false
 self_modulate = Color(1, 1, 1, 0.00392157)
+layout_mode = 0
 offset_right = 486.0
 offset_bottom = 722.0
 color = Color(0, 0, 0, 1)
@@ -450,6 +451,10 @@ color = Color(0, 0, 0, 1)
 [node name="Pause" type="AudioStreamPlayer" parent="MenuPausa"]
 stream = ExtResource("14_yjr3g")
 volume_db = 15.0
+
+[node name="Despause" type="AudioStreamPlayer" parent="MenuPausa"]
+stream = ExtResource("14_dij07")
+volume_db = 10.0
 
 [connection signal="hurt" from="Player" to="." method="_on_player_hurt"]
 [connection signal="picked" from="Player" to="." method="_on_player_picked"]

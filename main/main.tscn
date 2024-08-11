@@ -465,6 +465,10 @@ color = Color(0, 0, 0, 1)
 stream = ExtResource("14_f0y3j")
 volume_db = 15.0
 
+[node name="Despause" type="AudioStreamPlayer" parent="MenuPausa"]
+stream = ExtResource("14_82r57")
+volume_db = 10.0
+
 [connection signal="hurt" from="Player" to="." method="_on_player_hurt"]
 [connection signal="picked" from="Player" to="." method="_on_player_picked"]
 [connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]

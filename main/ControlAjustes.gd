@@ -33,6 +33,7 @@ func _ready():
 func _on_back_button_2_pressed():
 	save_volume_to_file($VolumenBarra2.value / 100.0)
 	get_tree().paused = false
+	$Despause.play()
 	hide_settings()
 
 

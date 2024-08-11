@@ -12,6 +12,7 @@ func _on_pause_button_pressed():
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
 		if get_tree().paused:
+			$Despause.play()
 			# Oculta el menú y reanuda el juego cuando el juego está pausado
 			$ControlAjustes.visible = false
 			get_tree().paused = false
@@ -26,5 +27,6 @@ func _input(event: InputEvent) -> void:
 
 
 func _on_salir_button_pressed():
+	$Despause.play()
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://menu/menu.tscn")  # Cambia a la escena del menú principal

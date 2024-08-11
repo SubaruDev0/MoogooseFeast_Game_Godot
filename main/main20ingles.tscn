@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://devn3qxwrb62n"]
+[gd_scene load_steps=18 format=3 uid="uid://devn3qxwrb62n"]
 
 [ext_resource type="Script" path="res://main/main20ingles.gd" id="1_l6rqr"]
 [ext_resource type="PackedScene" uid="uid://cbbr6dhnp53u1" path="res://player/player.tscn" id="2_2parb"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bplcq1pleqyhs" path="res://assets/HUD/media-pause-xxl.png" id="11_quits"]
 [ext_resource type="Script" path="res://main/MenuPausaIngles.gd" id="12_mw5oa"]
 [ext_resource type="AudioStream" uid="uid://drkjrokm2e0b4" path="res://assets/AudiosLevels/Pause.wav" id="13_lrcde"]
+[ext_resource type="AudioStream" uid="uid://bm1edc1jt1spi" path="res://assets/AudiosLevels/Despause.mp3" id="14_cqvbh"]
 [ext_resource type="Script" path="res://menu/ControlAjustesIngles.gd" id="14_cwdei"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_svxkk"]
@@ -421,10 +422,15 @@ theme_override_font_sizes/font_size = 20
 text = "Quit"
 flat = true
 
+[node name="Despause" type="AudioStreamPlayer" parent="MenuPausaIngles/ControlAjustesIngles"]
+stream = ExtResource("14_cqvbh")
+volume_db = 10.0
+
 [node name="BackgroundBlocker" type="ColorRect" parent="MenuPausaIngles"]
 process_mode = 3
 visible = false
 self_modulate = Color(1, 1, 1, 0.00392157)
+layout_mode = 0
 offset_right = 486.0
 offset_bottom = 722.0
 color = Color(0, 0, 0, 1)
@@ -432,6 +438,10 @@ color = Color(0, 0, 0, 1)
 [node name="Pause" type="AudioStreamPlayer" parent="MenuPausaIngles"]
 stream = ExtResource("13_lrcde")
 volume_db = 15.0
+
+[node name="Despause" type="AudioStreamPlayer" parent="MenuPausaIngles"]
+stream = ExtResource("14_cqvbh")
+volume_db = 10.0
 
 [connection signal="hurt" from="Player" to="." method="_on_player_hurt"]
 [connection signal="picked" from="Player" to="." method="_on_player_picked"]
