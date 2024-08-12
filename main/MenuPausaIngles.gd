@@ -30,3 +30,6 @@ func _on_salir_button_pressed():
 	$Despause.play()
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://menu/menuIngles.tscn")  # Cambia a la escena del menú principal
+
+
+

@@ -10,12 +10,12 @@
 [ext_resource type="PackedScene" uid="uid://bsb4dc6r64kb1" path="res://enemy/froggy.tscn" id="7_e5eu8"]
 [ext_resource type="Texture2D" uid="uid://df665857kmetv" path="res://misc/touch_button.png" id="8_l6mig"]
 [ext_resource type="AudioStream" uid="uid://c3q5tev305uae" path="res://assets/AudiosLevels/Nivel-alto.ogg" id="9_1mhdk"]
-[ext_resource type="Texture2D" uid="uid://bplcq1pleqyhs" path="res://assets/HUD/media-pause-xxl.png" id="11_iyams"]
 [ext_resource type="Script" path="res://menu/ControlAjustes.gd" id="12_edp3p"]
 [ext_resource type="Script" path="res://main/ControlAjustes.gd" id="12_ie3ju"]
 [ext_resource type="Script" path="res://main/MenuPausa.gd" id="13_robgs"]
-[ext_resource type="AudioStream" uid="uid://bm1edc1jt1spi" path="res://assets/AudiosLevels/Despause.mp3" id="15_phddq"]
-[ext_resource type="AudioStream" uid="uid://drkjrokm2e0b4" path="res://assets/AudiosLevels/Pause.wav" id="15_sua2c"]
+[ext_resource type="AudioStream" path="res://assets/AudiosLevels/Despause.mp3" id="15_phddq"]
+[ext_resource type="AudioStream" path="res://assets/AudiosLevels/Pause.wav" id="15_sua2c"]
+[ext_resource type="Texture2D" uid="uid://jb2w2m6fbpb" path="res://assets/HUD/PauseButton.png" id="16_vyqpr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_svxkk"]
 size = Vector2(73, 10)
@@ -456,18 +456,6 @@ theme_override_font_sizes/font_size = 20
 text = "Pantalla Completa"
 flat = true
 
-[node name="PauseButton" type="Button" parent="."]
-process_mode = 1
-texture_filter = 1
-offset_left = 11.0
-offset_top = 658.0
-offset_right = 305.0
-offset_bottom = 933.0
-scale = Vector2(0.119141, 0.185547)
-icon = ExtResource("11_iyams")
-flat = true
-metadata/_edit_use_anchors_ = true
-
 [node name="MenuPausa" type="Control" parent="."]
 process_mode = 3
 layout_mode = 3
@@ -653,6 +641,23 @@ volume_db = 15.0
 stream = ExtResource("15_phddq")
 volume_db = 10.0
 
+[node name="PauseButton" type="Button" parent="."]
+process_mode = 1
+texture_filter = 1
+anchors_preset = -1
+anchor_left = -0.225
+anchor_top = 1.525
+anchor_right = 6.4
+anchor_bottom = 8.45
+offset_left = 2.0
+offset_top = 719.0
+offset_right = 522.0
+offset_bottom = 1239.0
+scale = Vector2(0.103428, -0.0944579)
+icon = ExtResource("16_vyqpr")
+flat = true
+metadata/_edit_use_anchors_ = true
+
 [connection signal="hurt" from="Player" to="." method="_on_player_hurt"]
 [connection signal="picked" from="Player" to="." method="_on_player_picked"]
 [connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
@@ -671,8 +676,8 @@ volume_db = 10.0
 [connection signal="pressed" from="CanvasLayer2/ControlAjustes/CreditosButton2" to="CanvasLayer2/ControlAjustes" method="_on_creditos_button_2_pressed"]
 [connection signal="value_changed" from="CanvasLayer2/ControlAjustes/VolumenBarra2" to="CanvasLayer2/ControlAjustes" method="_on_volumen_barra_2_value_changed"]
 [connection signal="toggled" from="CanvasLayer2/ControlAjustes/FullScreenButton" to="CanvasLayer2/ControlAjustes" method="_on_full_screen_button_toggled"]
-[connection signal="pressed" from="PauseButton" to="MenuPausa" method="_on_pause_button_pressed"]
 [connection signal="pressed" from="MenuPausa/ControlAjustes/BackButton2" to="MenuPausa/ControlAjustes" method="_on_back_button_2_pressed"]
 [connection signal="pressed" from="MenuPausa/ControlAjustes/SalirButton" to="MenuPausa" method="_on_salir_button_pressed"]
 [connection signal="value_changed" from="MenuPausa/ControlAjustes/VolumenBarra2" to="MenuPausa/ControlAjustes" method="_on_volumen_barra_2_value_changed"]
 [connection signal="toggled" from="MenuPausa/ControlAjustes/FullScreenButton" to="MenuPausa/ControlAjustes" method="_on_full_screen_button_toggled"]
+[connection signal="pressed" from="PauseButton" to="MenuPausa" method="_on_pause_button_pressed"]

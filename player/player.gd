@@ -23,16 +23,16 @@ func get_input():
 	# Movimiento por teclas
 	var derecha = Input.is_action_pressed("ui_right") or Tocar_Derecha
 	var izquierda = Input.is_action_pressed("ui_left") or Tocar_Izquierda
-	if derecha and not izquierda:
+	if derecha:
 		desplazamiento.x = 1
-	elif izquierda and not derecha:
+	if izquierda:
 		desplazamiento.x = -1
 
 	var abajo = Input.is_action_pressed("ui_down") or Tocar_Abajo
 	var arriba = Input.is_action_pressed("ui_up") or Tocar_Arriba
-	if abajo and not arriba:
+	if abajo:
 		desplazamiento.y = 1
-	elif arriba and not abajo:
+	if arriba:
 		desplazamiento.y = -1
 	
 	# Movimiento por clic
