@@ -38,8 +38,6 @@ func get_input():
 	# Movimiento por clic
 	if click_position:
 		desplazamiento = (click_position - position).normalized()
-		if position.distance_to(click_position) < 5:
-			click_position = null
 	
 	return desplazamiento.normalized()
 
@@ -69,9 +67,15 @@ func _process(delta):
 
 # Función para manejar el clic del ratón o toque en pantalla táctil
 func _input(event):
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+	if event is InputEventMouseMotion and click_position:
+		# Actualiza la posición objetivo si se mueve el ratón o el dedo mientras se mantiene presionado
+		click_position = event.position
+	elif event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed:
 			click_position = event.position
+		else:
+			# Si se suelta el botón, se detiene el movimiento
+			click_position = null
 
 # Función que se llama cuando el jugador entra en contacto con otra área
 func _on_area_entered(area):
