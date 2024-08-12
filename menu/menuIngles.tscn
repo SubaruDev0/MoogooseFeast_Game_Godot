@@ -45,14 +45,14 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -437.0
+offset_left = -429.0
 offset_top = 698.0
-offset_right = 43.0
+offset_right = 51.0
 offset_bottom = 803.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("2_is01t")
 theme_override_font_sizes/font_size = 10
-text = "Alpha 0.1"
+text = "Version 0.1"
 horizontal_alignment = 1
 
 [node name="LabelVersion2" type="Label" parent="."]
@@ -69,8 +69,7 @@ grow_horizontal = 2
 theme_override_colors/font_color = Color(0.505344, 0.505344, 0.505344, 1)
 theme_override_fonts/font = ExtResource("2_is01t")
 theme_override_font_sizes/font_size = 7
-text = "(Available in desktop version)
-"
+text = "Available in desktop version"
 horizontal_alignment = 1
 
 [node name="QuitButton" type="Button" parent="."]
