@@ -12,15 +12,15 @@ var Tocar_Derecha = false
 var Tocar_Arriba = false
 var Tocar_Abajo = false
 
+# Variable para almacenar la posición del clic
+var click_position = null
 
 # Función para obtener el vector de desplazamiento del personaje
-# en función de las teclas de dirección presionadas
+# en función de las teclas de dirección presionadas o clic del ratón
 func get_input():
-	# Crear un vector de desplazamiento para almacenar la dirección
 	var desplazamiento = Vector2.ZERO
-	
-	# Verificar si se presionan las teclas de dirección o los botones táctiles
-	# Verificar las direcciones horizontales
+
+	# Movimiento por teclas
 	var derecha = Input.is_action_pressed("ui_right") or Tocar_Derecha
 	var izquierda = Input.is_action_pressed("ui_left") or Tocar_Izquierda
 	if derecha and not izquierda:
@@ -28,7 +28,6 @@ func get_input():
 	elif izquierda and not derecha:
 		desplazamiento.x = -1
 
-	# Verificar las direcciones verticales
 	var abajo = Input.is_action_pressed("ui_down") or Tocar_Abajo
 	var arriba = Input.is_action_pressed("ui_up") or Tocar_Arriba
 	if abajo and not arriba:
@@ -36,29 +35,26 @@ func get_input():
 	elif arriba and not abajo:
 		desplazamiento.y = -1
 	
-	# Normalizar el vector de desplazamiento para mantener una velocidad constante
+	# Movimiento por clic
+	if click_position:
+		desplazamiento = (click_position - position).normalized()
+		if position.distance_to(click_position) < 5:
+			click_position = null
+	
 	return desplazamiento.normalized()
 
-
 # Función para actualizar la animación del jugador
-# en función del vector de desplazamiento
 func actualizar_animacion(desplazamiento):
-	# Actualizar la animación del personaje
 	if desplazamiento.x != 0:
-		# Si el personaje se mueve horizontalmente
 		$AnimatedSprite2D.play("run")
 		$AnimatedSprite2D.flip_h = desplazamiento.x < 0
 	elif desplazamiento.y != 0:
-		# Si el personaje se mueve verticalmente
 		$AnimatedSprite2D.play("run")
 	else:
-		# Si el personaje no se mueve
 		$AnimatedSprite2D.play("idle")
-
 
 # Función principal de proceso que se llama en cada frame
 func _process(delta):
-	# Obtener el vector de desplazamiento
 	var desplazamiento = get_input()
 
 	# Mover al personaje en función del vector de desplazamiento
@@ -71,6 +67,11 @@ func _process(delta):
 	# Actualizar la animación del personaje
 	actualizar_animacion(desplazamiento)
 
+# Función para manejar el clic del ratón o toque en pantalla táctil
+func _input(event):
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		if event.pressed:
+			click_position = event.position
 
 # Función que se llama cuando el jugador entra en contacto con otra área
 func _on_area_entered(area):
@@ -87,13 +88,11 @@ func _on_area_entered(area):
 	if area.has_method("pickup"):	
 		area.pickup()
 
-
 # Función para manejar el final del juego
 func game_over():
-	set_process(false) # Detiene todas las funciones del Player
+	set_process(false)
 	$DeathAudio.play()
 	$AnimatedSprite2D.animation = "hurt"
-
 
 # Función que se llama cuando el jugador entra en contacto con otro cuerpo
 func _on_body_entered(body):
@@ -101,36 +100,27 @@ func _on_body_entered(body):
 		print("Froggy encontrado!")
 		emit_signal("hurt")
 
-
 # Funciones para los botones TOUCH
-# Función para el botón de movimiento a la izquierda presionado
 func _on_left_button_pressed():
 	Tocar_Izquierda = true
 
-# Función para el botón de movimiento a la izquierda liberado
 func _on_left_button_released():
 	Tocar_Izquierda = false
 
-# Función para el botón de movimiento a la derecha presionado
 func _on_right_button_pressed():
 	Tocar_Derecha = true
 
-# Función para el botón de movimiento a la derecha liberado
 func _on_right_button_released():
 	Tocar_Derecha = false
 
-# Función para el botón de movimiento hacia arriba presionado
 func _on_up_button_pressed():
 	Tocar_Arriba = true
 
-# Función para el botón de movimiento hacia arriba liberado
 func _on_up_button_released():
 	Tocar_Arriba = false
 
-# Función para el botón de movimiento hacia abajo presionado
 func _on_down_button_pressed():
 	Tocar_Abajo = true
 
-# Función para el botón de movimiento hacia abajo liberado
 func _on_down_button_released():
 	Tocar_Abajo = false

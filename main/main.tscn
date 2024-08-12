@@ -273,18 +273,6 @@ stream = ExtResource("9_uani6")
 volume_db = 3.0
 attenuation = 1e-05
 
-[node name="PauseButton" type="Button" parent="."]
-process_mode = 1
-texture_filter = 1
-offset_left = 11.0
-offset_top = 658.0
-offset_right = 305.0
-offset_bottom = 933.0
-scale = Vector2(0.119141, 0.185547)
-icon = ExtResource("11_llyi0")
-flat = true
-metadata/_edit_use_anchors_ = true
-
 [node name="MenuPausa" type="Control" parent="."]
 process_mode = 3
 layout_mode = 3
@@ -457,6 +445,7 @@ volume_db = 10.0
 process_mode = 3
 visible = false
 self_modulate = Color(1, 1, 1, 0.00392157)
+layout_mode = 0
 offset_right = 486.0
 offset_bottom = 722.0
 color = Color(0, 0, 0, 1)
@@ -468,6 +457,31 @@ volume_db = 15.0
 [node name="Despause" type="AudioStreamPlayer" parent="MenuPausa"]
 stream = ExtResource("14_82r57")
 volume_db = 10.0
+
+[node name="PauseButton" type="Button" parent="MenuPausa"]
+process_mode = 1
+texture_filter = 1
+layout_mode = 0
+offset_left = 11.0
+offset_top = 658.0
+offset_right = 305.0
+offset_bottom = 933.0
+scale = Vector2(0.119141, 0.185547)
+icon = ExtResource("11_llyi0")
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="PauseButton" type="Button" parent="MenuPausa/PauseButton"]
+process_mode = 1
+texture_filter = 1
+offset_left = 11.0
+offset_top = 658.0
+offset_right = 305.0
+offset_bottom = 933.0
+scale = Vector2(0.119141, 0.185547)
+icon = ExtResource("11_llyi0")
+flat = true
+metadata/_edit_use_anchors_ = true
 
 [connection signal="hurt" from="Player" to="." method="_on_player_hurt"]
 [connection signal="picked" from="Player" to="." method="_on_player_picked"]
@@ -482,8 +496,9 @@ volume_db = 10.0
 [connection signal="pressed" from="CanvasLayer/ButtonContainer/DownButton" to="Player" method="_on_down_button_pressed"]
 [connection signal="released" from="CanvasLayer/ButtonContainer/DownButton" to="Player" method="_on_down_button_released"]
 [connection signal="finished" from="NivelAlto" to="." method="_on_nivel_alto_finished"]
-[connection signal="pressed" from="PauseButton" to="MenuPausa" method="_on_pause_button_pressed"]
 [connection signal="pressed" from="MenuPausa/ControlAjustes/BackButton2" to="MenuPausa/ControlAjustes" method="_on_back_button_2_pressed"]
 [connection signal="pressed" from="MenuPausa/ControlAjustes/SalirButton" to="MenuPausa" method="_on_salir_button_pressed"]
 [connection signal="value_changed" from="MenuPausa/ControlAjustes/VolumenBarra2" to="MenuPausa/ControlAjustes" method="_on_volumen_barra_2_value_changed"]
 [connection signal="toggled" from="MenuPausa/ControlAjustes/FullScreenButton" to="MenuPausa/ControlAjustes" method="_on_full_screen_button_toggled"]
+[connection signal="pressed" from="MenuPausa/PauseButton" to="MenuPausa" method="_on_pause_button_pressed"]
+[connection signal="pressed" from="MenuPausa/PauseButton/PauseButton" to="MenuPausa" method="_on_pause_button_pressed"]

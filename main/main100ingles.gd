@@ -1,4 +1,4 @@
-#main
+ #main
 extends Node2D
 
 const GEMS_BASE = 5

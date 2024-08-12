@@ -28,7 +28,7 @@ GameData="*res://GameData.gd"
 window/size/viewport_width=480
 window/size/viewport_height=720
 window/size/resizable=false
-window/stretch/mode="canvas_items"
+window/stretch/mode="viewport"
 window/handheld/orientation=1
 window/android/enable_pan_and_scale_gestures=false
 window/android/enable_long_press_as_right_click=false
@@ -76,5 +76,6 @@ pointing/android/enable_pan_and_scale_gestures=true
 
 [rendering]
 
+textures/vram_compression/import_etc2_astc=true
 environment/defaults/default_clear_color=Color(0.411765, 0.247059, 0.333333, 1)
 2d/snap/snap_2d_vertices_to_pixel=true

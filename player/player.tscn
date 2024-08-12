@@ -72,7 +72,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3d5w6"]
-size = Vector2(40, 51)
+size = Vector2(45, 54)
 
 [node name="Player" type="Area2D"]
 position = Vector2(51, 43)
@@ -86,7 +86,7 @@ sprite_frames = SubResource("SpriteFrames_61bci")
 animation = &"run"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2, 14.5)
+position = Vector2(-0.5, 16)
 shape = SubResource("RectangleShape2D_3d5w6")
 
 [node name="BeatleAudio" type="AudioStreamPlayer" parent="."]
