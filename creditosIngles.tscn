@@ -112,14 +112,14 @@ text = "Creator:
 "
 horizontal_alignment = 1
 
-[node name="CREADOR" type="Label" parent="CreadorLabel"]
-layout_mode = 0
-offset_top = 34.0
+[node name="Creador" type="Button" parent="CreadorLabel"]
+offset_top = 31.0
 offset_right = 472.0
-offset_bottom = 69.0
+offset_bottom = 74.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 25
-text = "SubaruDev"
-horizontal_alignment = 1
+text = "Subaru Dev"
+flat = true
 
 [node name="ArteLabel" type="Label" parent="."]
 texture_filter = 1
@@ -242,6 +242,7 @@ volume_db = -80.0
 [connection signal="pressed" from="BackButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="SoundsButton" to="." method="_on_sounds_button_pressed"]
+[connection signal="pressed" from="CreadorLabel/Creador" to="." method="_on_creador_pressed"]
 [connection signal="pressed" from="ArteLabel/Arte1" to="." method="_on_arte_1_pressed"]
 [connection signal="pressed" from="ArteLabel/Arte2" to="." method="_on_arte_2_pressed"]
 [connection signal="pressed" from="ArteLabel/Arte3" to="." method="_on_arte_3_pressed"]

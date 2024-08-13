@@ -81,9 +81,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -234.0
-offset_top = 121.0
+offset_top = 113.0
 offset_right = 239.0
-offset_bottom = 185.0
+offset_bottom = 177.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("2_sv35r")
 theme_override_font_sizes/font_size = 20
@@ -91,14 +91,14 @@ text = "Creador:
 "
 horizontal_alignment = 1
 
-[node name="CREADOR" type="Label" parent="CreadorLabel"]
-layout_mode = 0
-offset_top = 34.0
+[node name="Creador" type="Button" parent="CreadorLabel"]
+offset_top = 31.0
 offset_right = 472.0
-offset_bottom = 69.0
+offset_bottom = 74.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 25
-text = "SubaruDev"
-horizontal_alignment = 1
+text = "Subaru Dev"
+flat = true
 
 [node name="ArteLabel" type="Label" parent="."]
 texture_filter = 1
@@ -107,9 +107,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -234.0
-offset_top = 209.0
+offset_top = 201.0
 offset_right = 239.0
-offset_bottom = 306.0
+offset_bottom = 298.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("2_sv35r")
 theme_override_font_sizes/font_size = 20
@@ -166,9 +166,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -234.0
-offset_top = 433.0
+offset_top = 425.0
 offset_right = 239.0
-offset_bottom = 530.0
+offset_bottom = 522.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("2_sv35r")
 theme_override_font_sizes/font_size = 20
@@ -241,6 +241,7 @@ volume_db = -80.0
 
 [connection signal="pressed" from="BackButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="CreadorLabel/Creador" to="." method="_on_creador_pressed"]
 [connection signal="pressed" from="ArteLabel/Arte1" to="." method="_on_arte_1_pressed"]
 [connection signal="pressed" from="ArteLabel/Arte2" to="." method="_on_arte_2_pressed"]
 [connection signal="pressed" from="ArteLabel/Arte3" to="." method="_on_arte_3_pressed"]

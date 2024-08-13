@@ -12,8 +12,8 @@
 [ext_resource type="AudioStream" uid="uid://c3q5tev305uae" path="res://assets/AudiosLevels/Nivel-alto.ogg" id="9_vtjj7"]
 [ext_resource type="Script" path="res://main/MenuPausaIngles.gd" id="12_ir7bj"]
 [ext_resource type="Script" path="res://menu/ControlAjustesIngles.gd" id="13_w112t"]
-[ext_resource type="AudioStream" path="res://assets/AudiosLevels/Despause.mp3" id="14_bmd01"]
-[ext_resource type="AudioStream" path="res://assets/AudiosLevels/Pause.wav" id="14_ilyfv"]
+[ext_resource type="AudioStream" uid="uid://bm1edc1jt1spi" path="res://assets/AudiosLevels/Despause.mp3" id="14_bmd01"]
+[ext_resource type="AudioStream" uid="uid://drkjrokm2e0b4" path="res://assets/AudiosLevels/Pause.wav" id="14_ilyfv"]
 [ext_resource type="Texture2D" uid="uid://jb2w2m6fbpb" path="res://assets/HUD/PauseButton.png" id="15_n2ban"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_svxkk"]
@@ -430,7 +430,7 @@ volume_db = 15.0
 stream = ExtResource("14_bmd01")
 volume_db = 10.0
 
-[node name="PauseButton2" type="Button" parent="."]
+[node name="PauseButton" type="Button" parent="."]
 process_mode = 1
 texture_filter = 1
 anchors_preset = -1
@@ -465,4 +465,4 @@ metadata/_edit_use_anchors_ = true
 [connection signal="toggled" from="MenuPausaIngles/ControlAjustesIngles/FullScreenButton" to="MenuPausaIngles/ControlAjustesIngles" method="_on_full_screen_button_toggled"]
 [connection signal="value_changed" from="MenuPausaIngles/ControlAjustesIngles/VolumenBarra2" to="MenuPausaIngles/ControlAjustesIngles" method="_on_volumen_barra_2_value_changed"]
 [connection signal="pressed" from="MenuPausaIngles/ControlAjustesIngles/SalirButton" to="MenuPausaIngles" method="_on_salir_button_pressed"]
-[connection signal="pressed" from="PauseButton2" to="MenuPausaIngles" method="_on_pause_button_2_pressed"]
+[connection signal="pressed" from="PauseButton" to="MenuPausaIngles" method="_on_pause_button_pressed"]
