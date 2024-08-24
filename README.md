@@ -17,9 +17,14 @@ En Mongoose Feast, eres una mangosta valiente que se embarca en una aventura fre
 
 ¡Descubre cuán ágil y rápido puedes ser en esta emocionante aventura de supervivencia!
 
+## Recursos
+
+- **Código Fuente:** Todo el código del juego ha sido desarrollado por mí utilizando Godot Engine.
+- **Gráficos y Recursos:** Las imágenes y animaciones utilizadas en el juego se han creado y editado para mejorar la experiencia visual y de juego.
+- **Modificaciones y Ajustes:** Los cambios y ajustes en el entorno del juego se han realizado dentro de Godot para lograr una jugabilidad fluida y atractiva.
+
 ## Consigue el Juego Aquí
 
 [**Juega Totalmente Gratis en Itch.io**](https://subarudev.itch.io/mongoose-feast)
 
-¡Disponible PROXIMAMENTE para descargar en Google Play Store 
-
+¡Disponible PROXIMAMENTE para descargar en Google Play Store!
